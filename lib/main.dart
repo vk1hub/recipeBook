@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'DetailsScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,14 @@ class _MyHomePageState extends State<MyHomePage> {
           return ListTile(
             title: Text(recipes[index]),
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(
+                    title: recipes[index],
+                  ),
+                ),
+              );
             },
           );
         },
