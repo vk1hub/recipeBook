@@ -28,11 +28,28 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final List<String> recipes = [
+    'Bagel Sandwich',
+    'Peanut Butter & Jelly',
+    'Grilled Cheese',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text(widget.title),
+      ),
+      body: ListView.builder(
+        itemCount: recipes.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(recipes[index]),
+            onTap: () {
+            },
+          );
+        },
       ),
     );
   }
